@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./css/calendar.css" />
+    <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/i18n/datepicker-cs.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Raleway:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&family=Raleway:wght@500&display=swap"
+      rel="stylesheet"
+    />
+<link href="https://fonts.googleapis.com/css2?family=Khula:wght@700&family=Noto+Sans:wght@400;500&family=Raleway:wght@500&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div id="inputContainer">
+        <input type="text" id="datepicker" autofocus autocomplete="off" />
+
+        <input
+          type="text"
+          id="eventInput"
+          placeholder="Napište událost"
+          maxlength="100"
+          autofocus
+          autocomplete="off"
+        />
+        <button id="addEventBtn">Přidat událost</button>
+
+        <div id="outputContainer">
+          <div id="output"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Click handler for the document to close the datepicker
+      $(document).ready(function () {
+        // Initialize the datepicker
+        $("#datepicker").datepicker({
+          onSelect: function () {
+            // Close the datepicker after selecting a date
+            $(this).datepicker("hide");
+          },
+        });
+
+        // Keyup event for Up Arrow and ESC keys
+        $("#datepicker").on("keyup", function (e) {
+          if (e.keyCode === 38 || e.keyCode === 27) {
+            $(this).datepicker("hide");
+          }
+        });
+
+        // Keyup event for Down Arrow key
+        $("#datepicker").on("keyup", function (e) {
+          if (e.keyCode === 40) {
+            $(this).datepicker("show");
+          }
+        });
+
+        // Keyup event for Left and Right Arrow keys
+        $("#datepicker").on("keyup", function (e) {
+          if (e.keyCode === 37) {
+            // Left Arrow key - Move to the previous month
+            $.datepicker._adjustDate(this, -1, "M");
+          } else if (e.keyCode === 39) {
+            // Right Arrow key - Move to the next month
+            $.datepicker._adjustDate(this, +1, "M");
+          }
+        });
+      });
+
+      /* Czech initialisation for the jQuery UI date picker plugin. */
+      /* Written by Tomas Muller (tomas@tomas-muller.net). */
+      (function (factory) {
+        "use strict";
+
+        if (typeof define === "function" && define.amd) {
+          // AMD. Register as an anonymous module.
+          define(["../widgets/datepicker"], factory);
+        } else {
+          // Browser globals
+          factory(jQuery.datepicker);
+        }
+      })(function (datepicker) {
+        "use strict";
+
+        datepicker.regional.cs = {
+          closeText: "Zavřít",
+          currentText: "Nyní",
+          monthNames: [
+            "leden",
+            "únor",
+            "březen",
+            "duben",
+            "květen",
+            "červen",
+            "červenec",
+            "srpen",
+            "září",
+            "říjen",
+            "listopad",
+            "prosinec",
+          ],
+          monthNamesShort: [
+            "led",
+            "úno",
+            "bře",
+            "dub",
+            "kvě",
+            "čer",
+            "čvc",
+            "srp",
+            "zář",
+            "říj",
+            "lis",
+            "pro",
+          ],
+          dayNames: [
+            "neděle",
+            "pondělí",
+            "úterý",
+            "středa",
+            "čtvrtek",
+            "pátek",
+            "sobota",
+          ],
+          dayNamesShort: ["ne", "po", "út", "st", "čt", "pá", "so"],
+          dayNamesMin: ["ne", "po", "út", "st", "čt", "pá", "so"],
+          weekHeader: "Týd",
+          dateFormat: "dd.mm.yy",
+          firstDay: 1,
+          isRTL: false,
+          showMonthAfterYear: false,
+          yearSuffix: "",
+          changeYear: true,
+          autoSize: true,
+          showButtonPanel: false,
+          prevText: "←",
+          nextText: "→",
+          navigationAsDateFormat: false,
+          showOn: "both",
+          altField: "#actualDate",
+          buttonText: "↓↓↓",
+        };
+        datepicker.setDefaults(datepicker.regional.cs);
+
+        return datepicker.regional.cs;
+      });
+
+      var events = [
+  {
+    eventName: 'La Roche en Ardens UCI marathon series',
+    date: new Date('2022-01-01')
+  }
+];
+
+      function formatDate(date) {
+        return (
+          date.getDate() +
+          "." +
+          (date.getMonth() + 1) +
+          "." +
+          date.getFullYear()
+        );
+      }
+
+      function updateOutput() {
+  var outputHtml = "";
+  events.forEach(function (event) {
+    outputHtml +=
+      '<div class="event-item">' +
+      '<div class="event-name"> ' + event.eventName + '</div>' +
+      '<div class="event-date"> <br>' + formatDate(event.date) + '</div>' +
+      '</div>';
+  });
+  $("#output").html(outputHtml);
+}
+
+      function addEvent() {
+        console.log("Add Event triggered");
+        var date = $("#datepicker").datepicker("getDate");
+        var eventName = $("#eventInput").val();
+        if (date && eventName) {
+          var eventObject = { date: date, eventName: eventName };
+          events.push(eventObject);
+          $("#eventInput").val("");
+          updateOutput();
+        } else {
+          console.log("Date or Event Name is missing");
+        }
+      }
+
+      $("#addEventBtn").click(addEvent);
+
+
+
+    </script>
+  </body>
+</html>

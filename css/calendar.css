@@ -1,0 +1,238 @@
+.ui-datepicker {
+
+  background: #e3010f;
+  border: none;
+  font-family: "Noto Sans", sans-serif;
+  margin-top: 2%;
+  display: flex; /* Make it a flex container */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: flex-end; /* Align children to the bottom */
+  height: 260px; /* Fixed height to fit the tallest possible month, adjust as needed */
+}
+
+.ui-datepicker-calendar {
+
+  flex-shrink: 0; /* Prevent the calendar from shrinking */
+}
+
+.ui-datepicker-current-day {
+
+}
+
+.ui-datepicker-trigger {
+  color: white;
+  background-color: #e3010f;
+  border: none;
+  padding: 0;
+  margin-left: 2%;
+}
+
+.hasDatepicker {
+  border: none;
+}
+
+.hasDatepicker:active {
+  border: none;
+}
+
+.hasDatepicker:focus {
+  border: none;
+}
+
+body {
+  background-color: #e3010f;
+}
+
+table {
+  width: 227px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-top: 0;
+}
+
+.ui-datepicker-header {
+  font-size: 12px;
+  background: #e3010f;
+  border: none;
+  color: white;
+  text-transform: capitalize;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ui-datepicker-year {
+  background-color: transparent;
+  color: white;
+  border: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.ui-datepicker-year:hover {
+  cursor: pointer;
+  background-color: salmon;
+}
+
+.ui-datepicker-calendar table {
+  border-collapse: collapse;
+}
+
+.ui-datepicker-calendar tbody td {
+  border-top: 0.5px solid white;
+  border-bottom: 0.5px solid white;
+}
+
+.ui-datepicker-calendar tbody td:not(:first-child) {
+  border-left: 0.5px solid white;
+}
+
+.ui-datepicker-calendar tbody td:not(:last-child) {
+  border-right: 0.5px solid white;
+}
+
+.ui-datepicker-calendar tbody td > * {
+  width: 30px;
+  line-height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ui-datepicker-calendar tbody td:hover {
+  background-color: salmon;
+}
+
+.ui-state-active {
+  background-color: blue;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  border-spacing: 0;
+}
+
+.ui-datepicker-today {
+  background-color: lightblue;
+}
+
+.ui-state-highlight {
+  color: #000000 !important;
+}
+
+.ui-datepicker-calendar .ui-state-default {
+  background: transparent;
+  color: white;
+}
+
+.ui-datepicker th {
+  padding-top: 3%;
+  padding-bottom: 3%;
+  background-color: #e3010f;
+  color: white;
+  font-size: xx-small;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.ui-datepicker-calendar tbody td > *,
+.ui-state-active,
+.ui-datepicker-today,
+.ui-datepicker-calendar .ui-state-default,
+.date-cell {
+  font-size: 9px;
+  font-weight: 600;
+  border: none;
+  text-decoration: none;
+}
+
+.date-picker-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ui-datepicker-prev {
+  font-size: 30px;
+  margin-bottom: 5%;
+}
+
+.ui-datepicker-prev:hover {
+  cursor: pointer;
+  background-color: salmon;
+}
+
+.ui-datepicker-next {
+  font-size: 30px;
+  order: 2;
+  margin-bottom: 5%;
+}
+
+.ui-datepicker-next:hover {
+  cursor: pointer;
+  background-color: salmon;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#inputContainer {
+  flex: 1;
+  padding-right: 20px;
+}
+
+#addEventBtn {
+  background-color: #e3010f;
+  color: white;
+  font-family: "Noto Sans", sans-serif;
+  border: none;
+}
+
+#addEventBtn:hover {
+  background-color: salmon;
+  cursor: pointer;
+}
+
+.ui-datepicker-calendar .ui-state-active {
+  background-color: #014d87;
+  color: white;
+}
+
+
+#outputContainer {
+  background: #ae000a;
+  color: white;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+  width: 227px;
+  margin-top: 270px;
+}
+
+.event-name {
+  padding-top: 10%;
+  font-size: 11.5px;
+  font-family: 'Raleway';
+  font-weight: 600;
+  color: white;
+}
+
+.event-date {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  color: #000000;
+}
+
+
+.event-item {
+  
+  /* Styles for the event item container */
+
+  padding: 5%; /* Example padding */
+  margin-bottom: 5%; /* Space between event items */
+  /* additional styling */
+}
