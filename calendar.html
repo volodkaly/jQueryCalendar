@@ -5,22 +5,18 @@
     <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/i18n/datepicker-cs.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Raleway:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&family=Raleway:wght@500&display=swap"
-      rel="stylesheet"
-    />
-<link href="https://fonts.googleapis.com/css2?family=Khula:wght@700&family=Noto+Sans:wght@400;500&family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap">
+
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Khula:wght@700&family=Noto+Sans:wght@400;500&family=Prompt:wght@200&family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Khula:wght@700&family=Noto+Sans:wght@400;500&family=Noto+Serif+JP:wght@300&family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&family=Noto+Serif+JP:wght@300&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="container">
-      <div id="inputContainer">
-        <input type="text" id="datepicker" autofocus autocomplete="off" />
+
+        
 
         <input
           type="text"
@@ -30,17 +26,23 @@
           autofocus
           autocomplete="off"
         />
+        <br>
         <button id="addEventBtn">Přidat událost</button>
-
+        <br>
+        <input type="text" id="datepicker" autofocus autocomplete="off" />
+        
         <div id="outputContainer">
           <div id="output"></div>
         </div>
-      </div>
-    </div>
+
 
     <script>
       // Click handler for the document to close the datepicker
       $(document).ready(function () {
+
+        
+
+
         // Initialize the datepicker
         $("#datepicker").datepicker({
           onSelect: function () {
@@ -160,6 +162,15 @@
   }
 ];
 
+function startOutput (events) {
+$("#output").html('<div class="event-item">' +
+      '<div class="event-name"> ' + events[0].eventName + '</div>' +
+      '<div class="event-date"> <br>' + formatDate(events[0].date) + '</div>' +
+      '</div>');
+}
+
+startOutput(events);
+
       function formatDate(date) {
         return (
           date.getDate() +
@@ -170,14 +181,16 @@
         );
       }
 
+
+
       function updateOutput() {
-  var outputHtml = "";
+      var outputHtml = '';
   events.forEach(function (event) {
     outputHtml +=
       '<div class="event-item">' +
       '<div class="event-name"> ' + event.eventName + '</div>' +
       '<div class="event-date"> <br>' + formatDate(event.date) + '</div>' +
-      '</div>';
+      '</div><hr>';
   });
   $("#output").html(outputHtml);
 }
@@ -202,4 +215,6 @@
 
     </script>
   </body>
+</html>
+
 </html>
