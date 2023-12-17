@@ -1,9 +1,14 @@
-.ui-datepicker {
 
+
+#datepicker {
+  margin-left: 100px;
+}
+
+.ui-datepicker {
+  margin-top: 20px;
   background: #e3010f;
   border: none;
   font-family: "Noto Sans", sans-serif;
-  margin-top: 2%;
   display: flex; /* Make it a flex container */
   flex-direction: column; /* Stack children vertically */
   justify-content: flex-end; /* Align children to the bottom */
@@ -11,12 +16,14 @@
 }
 
 .ui-datepicker-calendar {
-
   flex-shrink: 0; /* Prevent the calendar from shrinking */
 }
 
 .ui-datepicker-current-day {
-
+  padding: 0px;
+  margin: 0;
+  border-spacing: 0;
+  border: none;
 }
 
 .ui-datepicker-trigger {
@@ -41,10 +48,12 @@
 
 body {
   background-color: #e3010f;
+  font-family: "Noto Sans", sans-serif;
 }
 
+
 table {
-  width: 227px;
+  width: 240px;
   border-collapse: collapse;
   border-spacing: 0;
   border-top: 0;
@@ -61,6 +70,16 @@ table {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.ui-datepicker th {
+  padding-top: 20px;
+  padding-bottom: 3%;
+  background-color: #e3010f;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .ui-datepicker-year {
@@ -127,16 +146,6 @@ table {
   color: white;
 }
 
-.ui-datepicker th {
-  padding-top: 3%;
-  padding-bottom: 3%;
-  background-color: #e3010f;
-  color: white;
-  font-size: xx-small;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
 .ui-datepicker-calendar tbody td > *,
 .ui-state-active,
 .ui-datepicker-today,
@@ -155,8 +164,8 @@ table {
 }
 
 .ui-datepicker-prev {
-  font-size: 30px;
-  margin-bottom: 5%;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 24px;
 }
 
 .ui-datepicker-prev:hover {
@@ -165,9 +174,11 @@ table {
 }
 
 .ui-datepicker-next {
-  font-size: 30px;
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 200;
+  font-size: 24px;
   order: 2;
-  margin-bottom: 5%;
+  
 }
 
 .ui-datepicker-next:hover {
@@ -175,21 +186,19 @@ table {
   background-color: salmon;
 }
 
-.container {
-  display: flex;
-  justify-content: space-between;
-}
-
-#inputContainer {
-  flex: 1;
-  padding-right: 20px;
+#eventInput{
+  margin-left: 100px;
 }
 
 #addEventBtn {
+  padding: 0;
+  margin-left: 100px;
   background-color: #e3010f;
   color: white;
-  font-family: "Noto Sans", sans-serif;
   border: none;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 #addEventBtn:hover {
@@ -202,37 +211,41 @@ table {
   color: white;
 }
 
-
 #outputContainer {
+  padding-top: 10px;
+  margin-left: 100px;
   background: #ae000a;
   color: white;
   box-sizing: border-box;
   font-family: "Noto Sans", sans-serif;
-  width: 227px;
+  width: 240px;
   margin-top: 270px;
 }
 
 .event-name {
-  padding-top: 10%;
-  font-size: 11.5px;
-  font-family: 'Raleway';
+  font-size: 12.5px;
+  font-family: "Raleway";
   font-weight: 600;
   color: white;
 }
 
 .event-date {
   font-family: "Noto Sans", sans-serif;
-  font-size: 9px;
-  font-weight: 700;
+  font-size: 11px;
+  font-weight: 600;
   color: #000000;
+  margin-top: -5px;
+  padding-top: 0px;
 }
 
-
 .event-item {
-  
-  /* Styles for the event item container */
+padding: 12px;
 
-  padding: 5%; /* Example padding */
-  margin-bottom: 5%; /* Space between event items */
+}
+
+hr{
+  border: 0.5px solid #000000;
+}
+
   /* additional styling */
 }
