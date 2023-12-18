@@ -5,65 +5,58 @@
     <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/i18n/datepicker-cs.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap"
+    />
 
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Khula:wght@700&family=Noto+Sans:wght@400;500&family=Prompt:wght@200&family=Raleway:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Khula:wght@700&family=Noto+Sans:wght@400;500&family=Noto+Serif+JP:wght@300&family=Raleway:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&family=Noto+Serif+JP:wght@300&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Khula:wght@700&family=Noto+Sans:wght@400;500&family=Prompt:wght@200&family=Raleway:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Khula:wght@700&family=Noto+Sans:wght@400;500&family=Noto+Serif+JP:wght@300&family=Raleway:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&family=Noto+Serif+JP:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
   </head>
   <body>
+    <div class="container">
+    <input
+      type="text"
+      id="eventInput"
+      placeholder="napište událost"
+      maxlength="100"
+      autofocus
+      autocomplete="off"
+    />
+    <br/>
+    
+    <button id="addEventBtn">Přidat událost</button>
+    <div id="datepicker"></div>
 
-        
-
-        <input
-          type="text"
-          id="eventInput"
-          placeholder="Napište událost"
-          maxlength="100"
-          autofocus
-          autocomplete="off"
-        />
-        <br>
-        <button id="addEventBtn">Přidat událost</button>
-        <br>
-        <input type="text" id="datepicker" autofocus autocomplete="off" />
-        
-        <div id="outputContainer">
-          <div id="output"></div>
-        </div>
-
+    <div id="outputContainer">
+      <div id="output"></div>
+    </div>
+  </div>
 
     <script>
       // Click handler for the document to close the datepicker
       $(document).ready(function () {
-
-        
-
-
         // Initialize the datepicker
-        $("#datepicker").datepicker({
-          onSelect: function () {
-            // Close the datepicker after selecting a date
-            $(this).datepicker("hide");
-          },
-        });
-
-        // Keyup event for Up Arrow and ESC keys
-        $("#datepicker").on("keyup", function (e) {
-          if (e.keyCode === 38 || e.keyCode === 27) {
-            $(this).datepicker("hide");
-          }
-        });
-
-        // Keyup event for Down Arrow key
-        $("#datepicker").on("keyup", function (e) {
-          if (e.keyCode === 40) {
-            $(this).datepicker("show");
-          }
-        });
+        $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
 
         // Keyup event for Left and Right Arrow keys
         $("#datepicker").on("keyup", function (e) {
@@ -110,18 +103,18 @@
             "prosinec",
           ],
           monthNamesShort: [
-            "led",
-            "úno",
-            "bře",
-            "dub",
-            "kvě",
-            "čer",
-            "čvc",
-            "srp",
-            "zář",
-            "říj",
-            "lis",
-            "pro",
+            "Leden",
+            "Únor",
+            "Březen",
+            "Duben",
+            "Květen",
+            "Červen",
+            "Červenec",
+            "Srpen",
+            "Září",
+            "Říjen",
+            "Listopad",
+            "Prosinec",
           ],
           dayNames: [
             "neděle",
@@ -140,9 +133,9 @@
           isRTL: false,
           showMonthAfterYear: false,
           yearSuffix: "",
+          changeMonth: true,
           changeYear: true,
           autoSize: true,
-          showButtonPanel: false,
           prevText: "←",
           nextText: "→",
           navigationAsDateFormat: false,
@@ -156,20 +149,26 @@
       });
 
       var events = [
-  {
-    eventName: 'La Roche en Ardens UCI marathon series',
-    date: new Date('2022-01-01')
-  }
-];
+        {
+          eventName: "La Roche en Ardens UCI marathon series",
+          date: new Date("2022-01-01"),
+        },
+      ];
 
-function startOutput (events) {
-$("#output").html('<div class="event-item">' +
-      '<div class="event-name"> ' + events[0].eventName + '</div>' +
-      '<div class="event-date"> <br>' + formatDate(events[0].date) + '</div>' +
-      '</div>');
-}
+      function startOutput(events) {
+        $("#output").html(
+          '<div class="event-item">' +
+            '<div class="event-name"> ' +
+            events[0].eventName +
+            "</div>" +
+            '<div class="event-date"> <br>' +
+            formatDate(events[0].date) +
+            "</div>" +
+            "</div>"
+        );
+      }
 
-startOutput(events);
+      startOutput(events);
 
       function formatDate(date) {
         return (
@@ -181,19 +180,38 @@ startOutput(events);
         );
       }
 
-
-
       function updateOutput() {
-      var outputHtml = '';
-  events.forEach(function (event) {
-    outputHtml +=
-      '<div class="event-item">' +
-      '<div class="event-name"> ' + event.eventName + '</div>' +
-      '<div class="event-date"> <br>' + formatDate(event.date) + '</div>' +
-      '</div><hr>';
-  });
-  $("#output").html(outputHtml);
+        var outputHtml = "";
+        events.forEach(function (event, index) {
+        outputHtml +=
+            '<div class="event-item">' +
+            '<div class="event-name">' +
+            event.eventName +
+            "</div>" +
+            '<div class="event-date"><br>' +
+            formatDate(event.date) +
+            '<button class="delete-btn" data-index="' + index + '">Odstranit</button>' +
+            "</div>";
+    });
+
+    $("#output").html(outputHtml);
+
+            // Attach click event listeners to delete buttons
+    $(".delete-btn").click(function() {
+        var index = $(this).data("index");
+        deleteEvent(index);
+    });
+
+
+      }
+
+      function deleteEvent(index) {
+    events.splice(index, 1); // Remove the event from the array
+    updateOutput(); // Update the output to reflect the deletion
 }
+
+
+updateOutput();
 
       function addEvent() {
         console.log("Add Event triggered");
@@ -210,11 +228,6 @@ startOutput(events);
       }
 
       $("#addEventBtn").click(addEvent);
-
-
-
     </script>
   </body>
-</html>
-
 </html>
