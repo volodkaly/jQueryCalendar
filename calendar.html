@@ -8,28 +8,8 @@
     <script src="//code.jquery.com/ui/1.12.1/i18n/datepicker-cs.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Khula:wght@700&family=Noto+Sans:wght@400;500;600;700&family=Noto+Serif+JP:wght@300&family=Prompt:wght@200&family=Raleway:wght@500&display=swap" rel="stylesheet">
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Khula:wght@700&family=Noto+Sans:wght@400;500&family=Prompt:wght@200&family=Raleway:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Khula:wght@700&family=Noto+Sans:wght@400;500&family=Noto+Serif+JP:wght@300&family=Raleway:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&family=Noto+Serif+JP:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="container">
@@ -152,7 +132,7 @@
       var events = [
         {
           eventName: "La Roche en Ardens UCI marathon series",
-          date: new Date("2022-01-01"),
+          date: '10.5 - 12.5.2019',
         },
       ];
 
@@ -163,7 +143,7 @@
             events[0].eventName +
             "</div>" +
             '<div class="event-date"> <br>' +
-            formatDate(events[0].date) +
+            events[0].date +
             "</div>" +
             "</div>"
         );
@@ -217,9 +197,9 @@ updateOutput();
       function addEvent() {
         console.log("Add Event triggered");
         var date = $("#datepicker").datepicker("getDate");
-        var eventName = $("#eventInput").val();
+        var eventName = $("#eventInput").val().replace(/>+/, "").replace(/<+/, "");
         if (date && eventName) {
-          var eventObject = { date: date, eventName: eventName };
+          var eventObject = { date: date, eventName: eventName }; 
           events.push(eventObject);
           $("#eventInput").val("");
           updateOutput();
