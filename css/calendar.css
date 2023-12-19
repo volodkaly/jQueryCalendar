@@ -8,14 +8,21 @@ body {
 }
 
 .container{
- width: 12em;
+  width: 50vw;
+}
+
+
+
+.ui-helper-clearfix {
+  display: none;
 }
 
 .ui-datepicker {
   background: #e3010f;
   border: none;
   font-family: "Noto Sans", sans-serif;
-  width: 12em;
+  width: 50vw;
+
   margin: 0; /* Remove margin */
   padding: 0; /* Remove padding */
   table-layout: fixed;
@@ -50,7 +57,7 @@ body {
 }
 
 .ui-datepicker-header {
-  font-size: 12px;
+  font-size: 2vw;
   background: #e3010f;
   border: none;
   color: white;
@@ -59,7 +66,7 @@ body {
   font-weight: 500;
   width: 100%;
   margin: 0; /* Remove margin */
-  padding-top: 20px; /* Remove padding */
+  padding-top: 4vw; /* Remove padding */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -75,18 +82,18 @@ table {
 }
 
 .ui-datepicker th {
-  padding-top: 10px;
+  padding-top: 4vw;
   padding-bottom: 3%;
   background-color: #e3010f;
   color: white;
-  font-size: 8px;
+  font-size: 2vw;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .ui-datepicker-month {
-  font-size: 10px;
-  font-weight: 550;
+  font-size: 2.5vw;
+  font-weight: 500;
   text-align: center;
   background-color: transparent;
   color: white;
@@ -102,8 +109,8 @@ table {
 }
 
 .ui-datepicker-year {
-  font-size: 10px;
-  font-weight: 600;
+  font-size: 2.5vw;
+  font-weight: 500;
   background-color: transparent;
   color: white;
   border: none;
@@ -121,7 +128,7 @@ table {
   border-top: 0.5px solid white;
   border-bottom: 0.5px solid white;
   width: 14.3%;
-  line-height: 1.5em;
+  height: 7vw;
 }
 
 .ui-datepicker-calendar tbody td:not(:first-child) {
@@ -176,7 +183,7 @@ table {
 .ui-datepicker-today,
 .ui-datepicker-calendar .ui-state-default,
 .date-cell {
-  font-size: 8px;
+  font-size: 2vw;
   font-weight: 600;
   border: none;
   text-decoration: none;
@@ -188,7 +195,7 @@ table {
 
 .ui-datepicker-prev {
   font-family: "Noto Serif JP", serif;
-  font-size: 20px;
+  font-size: 4vw;
 }
 
 .ui-datepicker-prev:hover {
@@ -199,7 +206,7 @@ table {
 .ui-datepicker-next {
   font-family: "Noto Serif JP", serif;
   font-weight: 200;
-  font-size: 20px;
+  font-size: 4vw;
   order: 2;
 }
 
@@ -209,16 +216,18 @@ table {
 }
 
 #addEventBtn {
+  margin-top: 1vw;
   padding: 0;
   background-color: #e3010f;
   color: white;
   border: none;
   font-family: "Noto Sans", sans-serif;
-  font-size: 12px;
+  font-size: 2vw;
   font-weight: 600;
 }
 
 #addEventBtn:hover {
+
   background-color: salmon;
   cursor: pointer;
 }
@@ -228,14 +237,14 @@ table {
   color: white;
   box-sizing: border-box;
   font-family: "Noto Sans", sans-serif;
-  width: 100%;
+  width: 50vw;
 }
 
 
 .event-name {
-  padding-top: 10px;
-  padding-left: 10px;
-  font-size: 10px;
+  padding-top: 2vw;
+  padding-left: 3vw;
+  font-size: 2.55vw;
   font-family: "Raleway";
   font-weight: 600;
   color: white;
@@ -243,13 +252,13 @@ table {
 }
 
 .event-date {
-  padding-left: 10px;
-  padding-bottom: 10px;
+  padding-left: 3vw;
+  padding-bottom: 2vw;
   font-family: "Noto Sans", sans-serif;
-  font-size: 9px;
+  font-size: 2vw;
   font-weight: 700;
   color: #000000;
-  margin-top: -5px;
+  margin-top: -1.5vw;
   padding-top: 0px;
   display: flex;
   justify-content: space-between;
@@ -264,7 +273,7 @@ table {
   margin-left: 15px;
   color: transparent;
   font-family: monospace;
-  font-size: 10px;
+  font-size: 2vw;
   height: 20px;
 }
 
@@ -272,3 +281,4 @@ table {
   cursor: pointer;
   color: white;
 }
+
