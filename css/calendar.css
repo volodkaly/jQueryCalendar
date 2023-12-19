@@ -3,7 +3,7 @@ body {
   background-color: #e3010f;
   font-family: "Noto Sans", sans-serif;
   display: flex;
-  justify-content: center;
+  justify-content:center;
 
 }
 
@@ -288,3 +288,324 @@ table {
   color: white;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*bigger screens 
+Desktop and tablet
+
+*/
+
+@media (min-width: 600px) {
+ 
+body {
+  background-color: #e3010f;
+  font-family: "Noto Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+
+}
+
+#eventInput{
+  height: 2vw;
+  width: 20vw;
+  font-size: 1.5vw;
+}
+
+.container{
+  width: 20vw;
+}
+
+
+
+.ui-helper-clearfix {
+  display: none;
+}
+
+.ui-datepicker {
+  background: #e3010f;
+  border: none;
+  font-family: "Noto Sans", sans-serif;
+  width: 20vw;
+
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
+  table-layout: fixed;
+}
+
+.ui-datepicker-current-day {
+  background-color:  #014d87 !important;
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
+  border: none;
+  border-spacing: 0;
+}
+
+.ui-datepicker-trigger {
+  color: white;
+  background-color: #e3010f;
+  border: none;
+  padding: 0;
+  margin-left: 2%;
+}
+
+.hasDatepicker {
+  border: none;
+}
+
+.hasDatepicker:active {
+  border: none;
+}
+
+.hasDatepicker:focus {
+  border: none;
+}
+
+.ui-datepicker-header {
+  font-size: 1vw;
+  background: #e3010f;
+  border: none;
+  color: white;
+  text-transform: capitalize;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 500;
+  width: 100%;
+  margin: 0; 
+  padding-top: 3vw; /* Remove padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-top: 0;
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
+  width: 100%;
+}
+
+.ui-datepicker th {
+  padding-top: 1.6vw;
+  padding-bottom: 0.8vw;
+  background-color: #e3010f;
+  color: white;
+  font-size: 0.8vw;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.ui-datepicker-month {
+  font-size: 1.1vw;
+  font-weight: 500;
+  text-align: center;
+  background-color: transparent;
+  color: white;
+  border: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.ui-datepicker-month:hover {
+  cursor: pointer;
+  background-color: salmon;
+}
+
+.ui-datepicker-year {
+  font-size: 1.1vw;
+  font-weight: 500;
+  background-color: transparent;
+  color: white;
+  border: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.ui-datepicker-year:hover {
+  cursor: pointer;
+  background-color: salmon;
+}
+
+.ui-datepicker-calendar tbody td {
+  border-top: 0.5px solid white;
+  border-bottom: 0.5px solid white;
+  width: 14.3%;
+  height: 2.8vw;
+}
+
+.ui-datepicker-calendar tbody td:not(:first-child) {
+  border-left: 0.5px solid white;
+}
+
+.ui-datepicker-calendar tbody td:not(:last-child) {
+  border-right: 0.5px solid white;
+}
+
+.ui-datepicker-calendar tbody td > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.ui-datepicker-calendar tbody td:hover {
+  background-color: salmon;
+}
+
+.ui-state-active {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  border-spacing: 0;
+}
+
+.ui-datepicker-today {
+  margin: 0; 
+  padding: 0; 
+  border: none;
+  border-spacing: 0;
+  background-color: lightblue;
+}
+
+.ui-state-highlight {
+  color: #000000 !important;
+}
+
+.ui-datepicker-calendar .ui-state-default {
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
+  border: none;
+  border-spacing: 0;
+  background-color: transparent;
+  color: white;
+}
+
+.ui-datepicker-calendar tbody td > *,
+.ui-state-active,
+.ui-datepicker-today,
+.ui-datepicker-calendar .ui-state-default,
+.date-cell {
+  font-size: 0.8vw;
+  font-weight: 600;
+  border: none;
+  text-decoration: none;
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
+  border: none;
+  border-spacing: 0;
+}
+
+.ui-datepicker-prev {
+  font-family: "Noto Serif JP", serif;
+  font-size: 1.8vw;
+}
+
+.ui-datepicker-prev:hover {
+  cursor: pointer;
+  background-color: salmon;
+}
+
+.ui-datepicker-next {
+  font-family: "Noto Serif JP", serif;
+  font-weight: 200;
+  font-size: 1.8vw;
+  order: 2;
+}
+
+.ui-datepicker-next:hover {
+  cursor: pointer;
+  background-color: salmon;
+}
+
+#addEventBtn {
+  margin-top: 1vw;
+  padding: 0;
+  background-color: #e3010f;
+  color: white;
+  border: none;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1.5vw;
+  font-weight: 600;
+}
+
+#addEventBtn:hover {
+
+  background-color: salmon;
+  cursor: pointer;
+}
+
+#outputContainer {
+  background: #ae000a;
+  color: white;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+  width: 20vw;
+}
+
+
+.event-name {
+  padding-top: 1vw;
+  padding-left: 1vw;
+  font-size: 1.02vw;
+  font-family: "Raleway";
+  font-weight: 600;
+  color: white;
+
+}
+
+.event-date {
+  padding-left: 1vw;
+  padding-bottom: 1vw;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1vw;
+  font-weight: 700;
+  color: #000000;
+  margin-top: -1vw;
+  padding-top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin-left: 2vw;
+  color: transparent;
+  font-family: monospace;
+  font-size: 1vw;
+  height: 1vw;
+}
+
+.delete-btn:hover {
+  cursor: pointer;
+  color: white;
+}
+
+}
