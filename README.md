@@ -11,7 +11,7 @@ The same works for year picking.
 
 Hover effect is added for most clickable elements.
 
-Events can be added and deleted with hidden button next to event date.
+Events can be added with a button or 'Enter' key and deleted with hidden button next to event date.
 
 Potentially dangerous symbols (<>'"&/) are filtered from the user input,
 making the application safe to use. Spaces are trimmed from the input for convinience. 
