@@ -132,7 +132,7 @@
       var events = [
         {
           eventName: "La Roche en Ardens UCI marathon series",
-          date: new Date (2019,5,12),
+          date: new Date (2019,4,12),
         },
       ];
 
@@ -209,6 +209,14 @@ updateOutput();
       }
 
       $("#addEventBtn").click(addEvent);
+
+      $("#eventInput").keyup(function(event) {
+  if (event.keyCode === 13 || event.key === 'Enter') {
+    addEvent();
+  }
+});
+
     </script>
   </body>
 </html>
+
