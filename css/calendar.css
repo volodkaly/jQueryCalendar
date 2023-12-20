@@ -29,15 +29,15 @@ body {
   font-family: "Noto Sans", sans-serif;
   width: 90vw;
 
-  margin: 0; /* Remove margin */
-  padding: 0; /* Remove padding */
+  margin: 0; 
+  padding: 0; 
   table-layout: fixed;
 }
 
 .ui-datepicker-current-day {
   background-color:  #014d87 !important;
-  margin: 0; /* Remove margin */
-  padding: 0; /* Remove padding */
+  margin: 0;
+  padding: 0; 
   border: none;
   border-spacing: 0;
 }
@@ -72,7 +72,7 @@ body {
   font-weight: 500;
   width: 100%;
   margin: 0; 
-  padding-top: 8vw; /* Remove padding */
+  padding-top: 8vw; 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -82,17 +82,17 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   border-top: 0;
-  margin: 0; /* Remove margin */
-  padding: 0; /* Remove padding */
+  margin: 0; 
+  padding: 0; 
   width: 100%;
 }
 
 .ui-datepicker th {
-  padding-top: 8vw;
+  padding-top: 6vw;
   padding-bottom: 3%;
   background-color: #e3010f;
   color: white;
-  font-size: 4vw;
+  font-size: 3.6vw;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -131,18 +131,18 @@ table {
 }
 
 .ui-datepicker-calendar tbody td {
-  border-top: 0.5px solid white;
-  border-bottom: 0.5px solid white;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
   width: 14.3%;
-  height: 14vw;
+  height: 12vw;
 }
 
 .ui-datepicker-calendar tbody td:not(:first-child) {
-  border-left: 0.5px solid white;
+  border-left: 1px solid white;
 }
 
 .ui-datepicker-calendar tbody td:not(:last-child) {
-  border-right: 0.5px solid white;
+  border-right: 1px solid white;
 }
 
 .ui-datepicker-calendar tbody td > * {
@@ -176,8 +176,8 @@ table {
 }
 
 .ui-datepicker-calendar .ui-state-default {
-  margin: 0; /* Remove margin */
-  padding: 0; /* Remove padding */
+  margin: 0; 
+  padding: 0; 
   border: none;
   border-spacing: 0;
   background-color: transparent;
@@ -189,12 +189,12 @@ table {
 .ui-datepicker-today,
 .ui-datepicker-calendar .ui-state-default,
 .date-cell {
-  font-size: 4vw;
+  font-size: 3.5vw;
   font-weight: 600;
   border: none;
   text-decoration: none;
-  margin: 0; /* Remove margin */
-  padding: 0; /* Remove padding */
+  margin: 0; 
+  padding: 0; 
   border: none;
   border-spacing: 0;
 }
@@ -250,7 +250,7 @@ table {
 .event-name {
   padding-top: 4vw;
   padding-left: 6vw;
-  font-size: 5vw;
+  font-size: 4.5vw;
   font-family: "Raleway";
   font-weight: 600;
   color: white;
@@ -451,18 +451,18 @@ table {
 }
 
 .ui-datepicker-calendar tbody td {
-  border-top: 0.5px solid white;
-  border-bottom: 0.5px solid white;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
   width: 14.3%;
   height: 2.8vw;
 }
 
 .ui-datepicker-calendar tbody td:not(:first-child) {
-  border-left: 0.5px solid white;
+  border-left: 1px solid white;
 }
-
+            
 .ui-datepicker-calendar tbody td:not(:last-child) {
-  border-right: 0.5px solid white;
+  border-right: 1px solid white;
 }
 
 .ui-datepicker-calendar tbody td > * {
