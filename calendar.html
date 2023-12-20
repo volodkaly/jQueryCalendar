@@ -197,7 +197,9 @@ updateOutput();
       function addEvent() {
         console.log("Add Event triggered");
         var date = $("#datepicker").datepicker("getDate");
-        var eventName = $("#eventInput").val().replace(/>+/, "").replace(/<+/, "");
+        var eventName = $("#eventInput").val().replace(/&/g, '').replace(/>/g, '').replace(/</g, '') .replace(/'/g, '').replace(/"/g, '').replace(/\//g, '').trim();
+
+
         if (date && eventName) {
           var eventObject = { date: date, eventName: eventName }; 
           events.push(eventObject);
@@ -219,4 +221,5 @@ updateOutput();
     </script>
   </body>
 </html>
+
 
