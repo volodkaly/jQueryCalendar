@@ -1,53 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./css/calendar.css" />
     <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/i18n/datepicker-cs.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Khula:wght@700&family=Noto+Sans:wght@400;500;600;700&family=Noto+Serif+JP:wght@300&family=Prompt:wght@200&family=Raleway:wght@500&display=swap" rel="stylesheet">
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Khula:wght@700&family=Noto+Sans:wght@400;500;600;700&family=Noto+Serif+JP:wght@300&family=Prompt:wght@200&family=Raleway:wght@500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
-    <input
-      type="text"
-      id="eventInput"
-      placeholder="napište událost"
-      maxlength="100"
-      autofocus
-      autocomplete="off"
-    />
-    <br/>
-    
-    <button id="addEventBtn">Přidat událost</button>
-    <div id="datepicker"></div>
+      <input
+        type="text"
+        id="eventInput"
+        placeholder="napište událost"
+        maxlength="100"
+        autofocus
+        autocomplete="off"
+      />
+      <br/>
 
-    <div id="outputContainer">
-      <div id="output"></div>
+      <button id="addEventBtn">Přidat událost</button>
+      <div id="datepicker"></div>
+
+      <div id="outputContainer">
+        <div id="output"></div>
+      </div>
     </div>
-  </div>
 
     <script>
       // Click handler for the document to close the datepicker
       $(document).ready(function () {
         // Initialize the datepicker
-        $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-
-        // Keyup event for Left and Right Arrow keys
-        $("#datepicker").on("keyup", function (e) {
-          if (e.keyCode === 37) {
-            // Left Arrow key - Move to the previous month
-            $.datepicker._adjustDate(this, -1, "M");
-          } else if (e.keyCode === 39) {
-            // Right Arrow key - Move to the next month
-            $.datepicker._adjustDate(this, +1, "M");
-          }
+        $(function () {
+          $("#datepicker").datepicker();
         });
       });
 
@@ -132,7 +123,7 @@
       var events = [
         {
           eventName: "La Roche en Ardens UCI marathon series",
-          date: new Date (2019,4,12),
+          date: new Date(2019, 4, 12),
         },
       ];
 
@@ -164,44 +155,50 @@
       function updateOutput() {
         var outputHtml = "";
         events.forEach(function (event, index) {
-        outputHtml +=
+          outputHtml +=
             '<div class="event-item">' +
             '<div class="event-name">' +
             event.eventName +
             "</div>" +
             '<div class="event-date"><br>' +
             formatDate(event.date) +
-            '<button class="delete-btn" data-index="' + index + '">Odstranit</button>' +
+            '<button class="delete-btn" data-index="' +
+            index +
+            '">Odstranit</button>' +
             "</div>";
-    });
+        });
 
-    $("#output").html(outputHtml);
+        $("#output").html(outputHtml);
 
-            // Attach click event listeners to delete buttons
-    $(".delete-btn").click(function() {
-        var index = $(this).data("index");
-        deleteEvent(index);
-    });
-
-
+        // Attach click event listeners to delete buttons
+        $(".delete-btn").click(function () {
+          var index = $(this).data("index");
+          deleteEvent(index);
+        });
       }
 
       function deleteEvent(index) {
-    events.splice(index, 1); // Remove the event from the array
-    updateOutput(); // Update the output to reflect the deletion
-}
+        events.splice(index, 1); // Remove the event from the array
+        updateOutput(); // Update the output to reflect the deletion
+      }
 
-
-updateOutput();
+      updateOutput();
 
       function addEvent() {
         console.log("Add Event triggered");
         var date = $("#datepicker").datepicker("getDate");
-        var eventName = $("#eventInput").val().replace(/&/g, '').replace(/>/g, '').replace(/</g, '') .replace(/'/g, '').replace(/"/g, '').replace(/\//g, '').trim();
-
+        var eventName = $("#eventInput")
+          .val()
+          .replace(/&/g, "")
+          .replace(/>/g, "")
+          .replace(/</g, "")
+          .replace(/'/g, "")
+          .replace(/"/g, "")
+          .replace(/\//g, "")
+          .trim();
 
         if (date && eventName) {
-          var eventObject = { date: date, eventName: eventName }; 
+          var eventObject = { date: date, eventName: eventName };
           events.push(eventObject);
           $("#eventInput").val("");
           updateOutput();
@@ -212,14 +209,11 @@ updateOutput();
 
       $("#addEventBtn").click(addEvent);
 
-      $("#eventInput").keyup(function(event) {
-  if (event.keyCode === 13 || event.key === 'Enter') {
-    addEvent();
-  }
-});
-
+      $("#eventInput").keyup(function (event) {
+        if (event.keyCode === 13 || event.key === "Enter") {
+          addEvent();
+        }
+      });
     </script>
   </body>
 </html>
-
-
