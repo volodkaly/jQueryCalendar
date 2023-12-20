@@ -16,6 +16,7 @@ Events can be added and deleted with hidden button next to event date.
 Potentially dangerous symbols (<>'"&/) are filtered from the user input,
 making the application safe to use. Spaces are trimmed from the input for convinience. 
 
+Design is highly responsive depending on the window width.
 
 //////////////////////////////////////////////////////////////////////////
 
@@ -34,3 +35,5 @@ Události lze přidávat tlačítkem nebo klávesou "Enter" a mazat pomocí skry
 
 Potenciálně nebezpečné symboly (<>'"&/) jsou filtrovány z uživatelského vstupu,
 což zajišťuje bezpečnost applikace. Mezery jsou pro pohodlí oříznuty od vstupu.
+
+Design je vysoce přizpůsobivý v závislosti na šířce okna.
